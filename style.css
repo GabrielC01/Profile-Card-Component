@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
 
+/* Global settings */
 :root {
 	--dark-cyan: hsl(185, 75%, 39%);
 	--very-dark-desaturated-blue: hsl(229, 23%, 23%);
@@ -7,88 +8,198 @@
 	--dark-gray: hsl(0, 0%, 59%);
 }
 
-body {
+* {
 	margin: 0;
 	padding: 0;
-	width: 100vw;
-	height: calc((1/2)*100vw);
-	position: relative;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	background-color: var(--dark-cyan);
-	font-family: 'Kumbh Sans';
 }
 
-#background {
+html, body {
+	font-family: 'Kumbh Sans';
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+.background {
 	position: absolute;
 	top: 0;
 	right: 0;
 	bottom: 0;
 	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: var(--dark-cyan);
+	overflow: hidden;
 }
 
 #pattern-top, #pattern-bottom {
 	position: absolute;
-	width: 70%;
+	width: 150%;
 }
 
-#pattern-top {
-	top: -72%;
-	left: -22%;
-}
-
-#pattern-bottom {
-	bottom: -92%;
-	right: -18%;
+.container {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .card {
 	background-color: white;
-	width: 25%;
-	height: 55%;
-	z-index: 1;
-	border-radius: 15px;
-	box-shadow: 0 20px 100px var(--dark-grayish-blue);
-	display: flex;
-	flex-direction: column;
-}
-
-.card-header {
 	background-image: url("images/bg-pattern-card.svg");
 	background-repeat: no-repeat;
+	border-radius: 15px;
+	color: var(--dark-gray);
+	box-shadow: 0 20px 80px -35px var(--very-dark-desaturated-blue);
+}
+
+strong {
+	color: var(--very-dark-desaturated-blue);
+	margin: 0 0.8vmax;
+	font-size: 1.1em;
+}
+
+.card-info {
 	border-radius: 15px 15px 0 0;
+	height: 76%;
 	display: flex;
 	flex-direction: column;
+	justify-content: flex-end;
 	align-items: center;
-	justify-content: center;
-	flex: 1;
 }
 
-.card-header .profile-image-container {
-	height: 65%;
-	display: flex;
-	align-items: flex-end;
+.card-info img {
+	border: 5px solid white;
+	border-radius: 50%;
+	width: 30%;
 }
 
-.card-header .profile-info-container {
-	height: 35%;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
+.card-info div {
+	margin: 5% 0;
+	text-align: center;
+	line-height: 1.8em;
 }
 
 .card-stats {
-	height: 25%;
 	display: flex;
 	justify-content: center;
+	align-items: center;
+	height: 24%;
 	border-top: 1px solid lightgray;
+	border-radius: 0 0 15px 15px;
 }
 
 .stat {
-	flex: 1;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
 	justify-content: center;
+	align-items: center;
+	flex: 1;
+}
+
+.profile-name {
+	font-size: 1.1em;
+}
+
+.profile-city {
+	font-size: 0.9em;
+}
+
+small {
+	font-size: 0.7em;
+	margin: 0.9vmax 0;
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px) {
+	#pattern-top {
+		top: -50vh;
+		left: -90vw;
+	}
+
+	#pattern-bottom {
+		bottom: -40vh;
+		right: -95vw;
+	}
+
+	.card {
+		height: 56vh;
+		width: 85vw;
+	}
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen
+and (min-width : 321px) {
+/* STYLES GO HERE */
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen
+and (max-width : 320px) {
+/* STYLES GO HERE */
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px) {
+/* STYLES GO HERE */
+}
+
+/* iPads (landscape) ----------- */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : landscape) {
+/* STYLES GO HERE */
+}
+
+/* iPads (portrait) ----------- */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : portrait) {
+/* STYLES GO HERE */
+}
+
+/* Desktops and laptops ----------- */
+@media only screen
+and (min-width : 1224px) {
+/* STYLES GO HERE */
+}
+
+/* Large screens ----------- */
+@media only screen
+and (min-width : 1824px) {
+/* STYLES GO HERE */
+}
+
+/* iPhone 5 (portrait & landscape)----------- */
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 568px) {
+/* STYLES GO HERE */
+}
+
+/* iPhone 5 (landscape)----------- */
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 568px)
+and (orientation : landscape) {
+/* STYLES GO HERE */
+}
+
+/* iPhone 5 (portrait)----------- */
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 568px)
+and (orientation : portrait) {
+/* STYLES GO HERE */
 }
