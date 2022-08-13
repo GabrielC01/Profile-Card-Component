@@ -18,16 +18,18 @@ html, body {
 	height: calc((1/2)*100vw);
 	font-family: 'Kumbh Sans';
 	position: relative;
+	font-size: 1.2vw;
 }
 
 .background {
 	position: absolute;
 	top: 0;
 	left: 0;
-	width: 100%;
-	height: 100%;
+	width: 100vw;
+	height: 100vh;
 	z-index: -1;
 	background-color: var(--dark-cyan);
+	overflow: hidden;
 }
 
 .background * {
@@ -40,7 +42,7 @@ html, body {
 }
 
 .background :last-child {
-	top: 50%;
+	top: 60%;
 	left: 50%;
 }
 
@@ -52,8 +54,8 @@ html, body {
 	position: absolute;
 	top: 0;
 	left: 0;
-	width: 100%;
-	height: 100%;
+	width: 100vw;
+	height: 100vh;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -65,6 +67,9 @@ html, body {
 	border-radius: 15px;
 	display: flex;
 	flex-direction: column;
+	width: 30%;
+	height: 60%;
+	box-shadow: 0 50px 80px -60px var(--very-dark-desaturated-blue);
 }
 
 .card-info {
@@ -78,6 +83,7 @@ html, body {
 .pattern-card {
 	position: absolute;
 	width: 100%;
+	height: 50%;
 	top: 0;
 	left: 0;
 	border-radius: 15px 15px 0 0;
@@ -118,9 +124,35 @@ html, body {
 }
 
 strong {
-	font-size: 1.5vw;
+	font-size: 1.3vw;
 }
 
 small {
-	font-size: 1.2vw;
+	font-size: 1vw;
+}
+
+.card-info div strong {
+	margin: 0 0.5vw 0 0;
+}
+
+/* Portrait view */
+@media screen and (orientation: portrait) {
+	.background :first-child, .background :last-child {
+		width: 100%;
+		height: 100%;
+	}
+
+	.card {
+		width: 90%;
+		height: 80%;
+		font-size: 3vw;
+	}
+
+	strong {
+		font-size: 4vw;
+	}
+
+	small {
+		font-size: 2vw;
+	}
 }
